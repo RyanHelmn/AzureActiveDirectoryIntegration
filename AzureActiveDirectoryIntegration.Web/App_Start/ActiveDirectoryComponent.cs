@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.Cookies;
 using Owin;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
@@ -58,9 +59,7 @@ namespace AzureActiveDirectoryIntegration.Web.App_Start
         {
             var app = args.AppBuilder;
 
-            app.UseExternalSignInCookie();
-
-            app.AuthenticateFrontEndWithActiveDirectory(_umbracoContextAccessor, _runtimeState, _userService, _globalSettings, _securitySection, _clientId, _redirectUrl, _tenantId, _openIdAuthorizeUrl);
+            app.AuthenticateFrontEndWithActiveDirectory(_clientId, _redirectUrl, _tenantId, _openIdAuthorizeUrl);
 
             app
                 .UseUmbracoBackOfficeCookieAuthentication(_umbracoContextAccessor, _runtimeState, _userService, _globalSettings, _securitySection, PipelineStage.Authenticate)
