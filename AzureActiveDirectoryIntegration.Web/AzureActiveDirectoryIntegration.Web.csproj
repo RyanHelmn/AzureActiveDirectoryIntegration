@@ -323,6 +323,7 @@
     <Compile Include="App_Start\ActiveDirectoryComponent.cs" />
     <Compile Include="App_Start\FrontEndActiveDirectoryExtensions.cs" />
     <Compile Include="App_Start\StartupComposer.cs" />
+    <Compile Include="App_Start\UmbracoADAuthExtensions.cs" />
     <Compile Include="Attributes\ActiveDirectoryAuthorizeAttribute.cs" />
     <Compile Include="Controllers\CustomRenderMvcController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

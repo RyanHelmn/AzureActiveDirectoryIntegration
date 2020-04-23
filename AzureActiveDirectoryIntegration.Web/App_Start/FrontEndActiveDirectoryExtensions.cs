@@ -22,8 +22,8 @@ namespace AzureActiveDirectoryIntegration.Web.App_Start
             app.UseCookieAuthentication(new CookieAuthenticationOptions(), PipelineStage.Authenticate);
 
             app.UseOpenIdConnectAuthentication(new OpenIdConnectAuthenticationOptions
-
             {
+                AuthenticationType = "Cookie",
                 ClientId = clientId,
                 Resource = clientId,
                 Authority = $"{authorizeUrl}{tenantId}",
